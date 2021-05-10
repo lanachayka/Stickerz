@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Goblin+One&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.heading nav a {    
+    display: inline-block;
+}
+
+.products_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr)
+}
+
+.products_list img {
+    display: block;
+    width: 100%
+}
+
+.logo {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 2px solid salmon;
+    padding: 10px;
+    margin: 20px;
+    position: fixed;
+    top: 400px;
+    font-family: 'Goblin One', cursive;
+}
+
+.heading {
+    background-image: url(../img/baby-yoda.svg);
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+}
+#contacts {
+    background-color: red;
+}
+
+footer h2 {
+    background-color:green;
+}
+
+h2:hover {
+    text-decoration: underline;
+}
+
+h1::first-letter,
+h2::first-letter {
+    font-style: italic;
+    color: yellow;
+}
