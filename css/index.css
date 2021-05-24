@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+:root {
+  font-family: 'DotGothic16', sans-serif;
+  --main-color: #000000;
+  --accent-color: rgb(50, 206, 211);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  max-width: 980px;
+  margin: auto;
+}
+
+.heading .logo,
+header .banner h1 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+header label {
+  font-size: 3.5rem;
+}
+
+#burger-checkbox {
+  display: none;
+}
+
+header nav {
+  display: none;
+}
+
+header input:checked ~ nav {
+  display: block;
+}
+
+.heading nav a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+
+.heading nav a:hover {
+  font-weight: bold;
+}
+
+@media (min-width: 500px) {
+
+  header label {
+    display: none;
+  }
+
+  .heading {
+    display: flex;
+  }
+
+  .heading .menu {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+}
+
+header .banner {
+  background-image: url(../img/baby-yoda.svg);
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header .banner h1 {
+  color: var(--accent-color);
+}
+
+.products-carousel img {
+  display: block;
+  width: 50%;
+  margin: auto;
+}
+
+.two-products-carousel .products {
+  display: flex;
+  justify-content: space-around;
+}
+
+.two-products-carousel .products img {
+  display: block;
+  width: 30%;
+}
+
+
+
+
+.product-list article {
+  border: 1px solid var(--main-color);
+}
+
+.product-list article img {
+  display: block;
+  width: 100%;
+}
+
+.product-list article div {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (min-width: 600px) {
+  .product-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  }
+}
+
+@media (min-width: 900px) {
+  .product-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 980px) {
+  .product-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+footer form label {
+  width: 80px;
+}
+
+
+/* Controls */
+
+.button {
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #FFFFFF;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-align: center;
+  transition: color 0.7s;
+  background-color: transparent;
+}
+
+.button:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+
+.card-button {
+  border-color: black;
+  color: black;
+}
+
+.card-button:hover {
+  background-color: black;
+  color: white;
+}

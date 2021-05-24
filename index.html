@@ -6,98 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stickerz</title>
     <link rel="icon" href="img/baby-yoda.svg">
-    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-    <header id="home" class="container">        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-              <a class="navbar-brand" href="#">Stickerz</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="navbar-nav">
-                    <a class="nav-link active" href="#home">Home</a>
-                    <a class="nav-link" href="#products">Products</a>
-                    <a class="nav-link" href="#contacts">Contacts</a>
-                    <a class="nav-link" href="cart.html">Cart</a>
-                  </div>
-              </div>
-            </div>
-        </nav>    
-        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="img/baby-yoda.svg" class="d-block w-50 m-auto" alt="Baby Yoda">
-              </div>
-              <div class="carousel-item">
-                <img src="img/banana.svg" class="d-block w-50 m-auto" alt="Banana">
-              </div>
-              <div class="carousel-item">
-                <img src="img/girl.svg" class="d-block w-50 m-auto" alt="Girl">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+    <header id="home">
+        <div class="heading">
+            <div class="logo">Stickerz</div>
+            <label class="burger-icon" for="burger-checkbox">☰</label>
+            <input type="checkbox" id="burger-checkbox">
+            <nav class="menu">
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#contacts">Contacts</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+            <div class="clock"></div>
+        </div>
+        <div class="banner">
+            <h1>Stickerz</h1>
+            <button class="button">Buy now</button>
+        </div>
     </header>
-    <main class="container">
+    <main>
         <h2 id="products">Products</h2>
-        <div class="product-list row">
-            <article class="card col-12 col-sm-6 col-md-4 col-lg-3" >
-                <img src="img/baby-yoda.svg" class="card-img-top" alt="Baby Yoda">
-                <div class="card-body">
-                  <h5 class="card-title">Baby Yoda</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#productInfoModal">Info</button>
-                  <button class="btn btn-primary">Buy now</button>
-                </div>
-            </article>
-            <article class="card col-12 col-sm-6 col-md-4 col-lg-3" >
-                <img src="img/banana.svg" class="card-img-top" alt="Banana">
-                <div class="card-body">
-                  <h5 class="card-title">Banana</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button class="btn btn-info">Info</button>
-                  <button class="btn btn-primary">Buy now</button>
-                </div>
-            </article>
-            <article class="card col-12 col-sm-6 col-md-4 col-lg-3" >
-                <img src="img/girl.svg" class="card-img-top" alt="Girl">
-                <div class="card-body">
-                  <h5 class="card-title">Girl</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button class="btn btn-info">Info</button>
-                  <button class="btn btn-primary">Buy now</button>
-                </div>
-            </article>
-            <article class="card col-12 col-sm-6 col-md-4 col-lg-3">
-                <img src="img/viking.svg" class="card-img-top" alt="Viking">
-                <div class="card-body">
-                  <h5 class="card-title">Viking</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button class="btn btn-info">Info</button>
-                  <button class="btn btn-primary">Buy now</button>
-                </div>
-            </article>
+        <div class="products-carousel">
+            <img src="img/baby-yoda.svg" alt="Product">
+            <button class="button card-button slide-prev">Prev</button>
+            <button class="button card-button slide-next">Next</button>
+        </div>
+        <div class="two-products-carousel">
+            <div class="products">
+                <img class="product-one" src="img/baby-yoda.svg" alt="Product">
+                <img class="product-two" src="img/banana.svg" alt="Product">
+            </div>
+            <button class="button card-button slide-prev">Prev</button>
+            <button class="button card-button slide-next">Next</button>
+        </div>
+        <button class="button card-button sort-asc">Sort By Price Ascending</button>
+        <button class="button card-button sort-desc">Sort By Price Descending</button>
+        <div class="product-list">
+            
         </div>
     </main>
-    <footer class="container">
+    <footer>
         <h2 id="contacts">Contact Us</h2>
         <form method="POST" action="https://formspree.io/?????">
             <label for="user-name">
@@ -113,26 +65,10 @@
             <input class="button card-button" type="submit">
         </form>
     </footer>
-
-    <!-- Modal -->
-    <div class="modal fade" id="productInfoModal" tabindex="-1" aria-labelledby="productInfoModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="productInfoModalLabel">Baby Yoda</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="img/baby-yoda.svg" class="card-img-top" alt="Baby Yoda">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/carousel-two.js"></script>
 </body>
+
 </html>
