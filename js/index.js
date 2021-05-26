@@ -1,36 +1,26 @@
-const productsJson = `
-[
-    {
-        "id": "1",
-        "title": "Baby Yoda",
-        "imgUrl": "img/baby-yoda.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore odit ad, accusantium suscipit unde velit perferendis ducimus asperiores quos fuga recusandae! Necessitatibus soluta ad pariatur animi minima numquam temporibus distinctio.",
-        "price": 42
-    },
-    {
-        "id": "2",
-        "title": "Banana",
-        "imgUrl": "img/banana.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore odit ad, accusantium suscipit unde velit perferendis ducimus asperiores quos fuga recusandae! Necessitatibus soluta ad pariatur animi minima numquam temporibus distinctio.",
-        "price": 40
-    },
-    {
-        "id": "3",
-        "title": "Girl",
-        "imgUrl": "img/girl.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore odit ad, accusantium suscipit unde velit perferendis ducimus asperiores quos fuga recusandae! Necessitatibus soluta ad pariatur animi minima numquam temporibus distinctio.",
-        "price": 39
-    },
-    {
-        "id": "4",
-        "title": "Viking",
-        "imgUrl": "img/viking.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore odit ad, accusantium suscipit unde velit perferendis ducimus asperiores quos fuga recusandae! Necessitatibus soluta ad pariatur animi minima numquam temporibus distinctio.",
-        "price": 35
-    }
-]`;
+let products;
 
-function renderProducts(products, sortDirection = "ascending") {
+// function fetchProducts() {
+//    fetch('products.json')
+//         .then(response => response.json() )
+//        .then(productsFromServer => products = productsFromServer)
+//        .then( () => renderProducts() )
+//        .catch (err => alert(err.message))
+// }
+
+async function fetchProducts() {
+    try {const response = await fetch('products.json');
+    products = await response.json();
+    await convertCurrency();
+    renderProducts();
+    } catch (err) {
+        alert(err.message);
+    }
+}
+
+fetchProducts();
+
+function renderProducts(sortDirection = "ascending") {
     const productsContainer = document.querySelector(".product-list");
     productsContainer.innerHTML = '';
     const sortedProducts = [...products]
@@ -45,25 +35,41 @@ function renderProducts(products, sortDirection = "ascending") {
                 <p>${product.description}</p>
                 <div>
                     <button class="button card-button">Info</button>
-                    <button class="button card-button">Buy now - ${product.price}</button>
+                    <button class="button card-button">Buy now - ${product.convertedPrice} (${product.currency})</button>
                 </div>
             </article>`;
     }    
 }
 
-const products = JSON.parse(productsJson);
-renderProducts(products);
-
 const btnSortAsc = document.querySelector('.sort-asc');
 btnSortAsc.addEventListener('click', sortProductsAsc);
 
 function sortProductsAsc() {
-    renderProducts(products, "ascending");
+    renderProducts("ascending");
 }
 
 const btnSortDesc = document.querySelector('.sort-desc');
 btnSortDesc.addEventListener('click', sortProductsDesc);
 
 function sortProductsDesc() {
-    renderProducts(products, "descending");
+    renderProducts("descending");
 }
+
+async function convertCurrency() {
+    const startCurrency = "USD";
+    const targetCurrency = document.querySelector(".currency-input").value;
+    const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${startCurrency}`);
+    const rates = await response.json();
+    const rate = rates.rates[targetCurrency];
+    for (const product of products) {
+        product.convertedPrice = (product.price * rate).toFixed(2);
+        product.currency = targetCurrency;
+    }
+}
+
+document.querySelector('.convert-currency')
+    .addEventListener('click', async() => {
+        await convertCurrency();
+        renderProducts();
+    });
+

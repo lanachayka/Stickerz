@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "title": "Baby Yoda",
+        "imgUrl": "img/baby-yoda.svg",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore odit ad, accusantium suscipit unde velit perferendis ducimus asperiores quos fuga recusandae! Necessitatibus soluta ad pariatur animi minima numquam temporibus distinctio.",
+        "price": 42
+    },
+    {
+        "id": "2",
+        "title": "Banana",
+        "imgUrl": "img/banana.svg",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore odit ad, accusantium suscipit unde velit perferendis ducimus asperiores quos fuga recusandae! Necessitatibus soluta ad pariatur animi minima numquam temporibus distinctio.",
+        "price": 40
+    },
+    {
+        "id": "3",
+        "title": "Girl",
+        "imgUrl": "img/girl.svg",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore odit ad, accusantium suscipit unde velit perferendis ducimus asperiores quos fuga recusandae! Necessitatibus soluta ad pariatur animi minima numquam temporibus distinctio.",
+        "price": 39
+    },
+    {
+        "id": "4",
+        "title": "Viking",
+        "imgUrl": "img/viking.svg",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore odit ad, accusantium suscipit unde velit perferendis ducimus asperiores quos fuga recusandae! Necessitatibus soluta ad pariatur animi minima numquam temporibus distinctio.",
+        "price": 35
+    }
+]
