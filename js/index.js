@@ -8,15 +8,28 @@ let products;
 //        .catch (err => alert(err.message))
 // }
 
-async function fetchProducts() {
-    try {const response = await fetch('products.json');
-    products = await response.json();
+ async function fetchProducts() {
+     try {const response = await fetch('products.json');
+     products = await response.json();
     await convertCurrency();
     renderProducts();
-    } catch (err) {
+     } catch (err) {
         alert(err.message);
     }
 }
+
+// function fetchProducts() {
+//      const xhr = new XMLHttpRequest();
+//     xhr.onreadystatechange = function () {
+//         if (xhr.readyState === 4 && xhr.status === 200) {
+//             products = JSON.parse(xhr.responseText);
+//             convertCurrency().then( () => renderProducts() );
+//         }
+//     }
+//     xhr.open('GET', 'products.json', true);
+//     xhr.send();
+//  }
+
 
 fetchProducts();
 

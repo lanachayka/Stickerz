@@ -57,24 +57,24 @@
     </main>
     <footer>
         <h2 id="contacts">Contact Us</h2>
-        <form method="POST" action="https://formspree.io/?????">
-            <label for="user-name">
-                Your name: 
+        <form class="contact-form">
+            <label>
+                User name: <input name="name" type="text" placeholder="User name" required>
             </label>
-            <input id="user-name" type="text" placeholder="Your name" name="user-name">
             <br>
-            <label for="user-email">
-                Your email: 
+            <label>
+                Message: <textarea name="message" id="" cols="30" rows="10"></textarea>
             </label>
-            <input id="user-email" type="email" placeholder="Your email" name="user-email">
             <br>
-            <input class="button card-button" type="submit">
+            <input type="submit">
+            <input type="reset">
         </form>
     </footer>
     <script src="js/index.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/carousel-two.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>
